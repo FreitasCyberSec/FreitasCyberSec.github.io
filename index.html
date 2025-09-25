@@ -18,50 +18,41 @@
                 <span>hfreitas@localhost: ~</span>
             </div>
             <div class="terminal-body">
-                <div id="terminal-output"></div>
+                <div id="terminal-output">
+                    <span class="prompt">$</span> <span class="command">./humberto.sh --profile</span><br>
+                    <span class="output">> EXECUTANDO SCRIPT...</span><br><br>
+                    <span class="output">> NOME: Humberto Freitas</span><br>
+                    <span class="output">> STATUS: Estudante de Engenharia de Software</span><br>
+                    <span class="output">> OBJETIVO: Especialização em Cybersecurity</span><br><br>
+                    <span class="prompt">$</span><span class="cursor">█</span>
+                </div>
             </div>
         </div>
 
         <section class="arsenal">
             <h3>// MEU ARSENAL</h3>
             <div class="skills-grid">
-                <img src="https://skillicons.dev/icons?i=python,linux,bash,sql,git" alt="Core Skills" />
-                <img src="https://skillicons.dev/icons?i=vscode,github,docker" alt="Development Tools" />
+                <img src="https://skillicons.dev/icons?i=python,linux,bash,sql,git" title="Python, Linux, Bash, SQL, Git" alt="Core Skills" />
+                <img src="https://skillicons.dev/icons?i=vscode,github,docker" title="VSCode, GitHub, Docker" alt="Development Tools" />
             </div>
         </section>
 
         <section class="arsenal">
             <h3>// FOCO DE ESPECIALIZAÇÃO</h3>
             <div class="skills-grid">
-                <img src="https://skillicons.dev/icons?i=kalilinux,wireshark,metasploit,nmap" alt="Cybersecurity Tools" />
+                <img src="https://skillicons.dev/icons?i=kalilinux,wireshark,metasploit,nmap" title="Kali Linux, Wireshark, Metasploit, Nmap" alt="Cybersecurity Tools" />
             </div>
-             <p class="disclaimer">(Estudando e aprofundando...)</p>
+             <p class="disclaimer">(Atualmente estudando e aprofundando nessas ferramentas)</p>
         </section>
 
-        <section class="contact">
-            <h3>// CONTATO</h3>
-            <p>
-              <a href="https://github.com/FreitasCyberSec" target="_blank">GitHub</a>
-              <span class="separator">|</span>
-              <a href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank">LinkedIn</a>
-            </p>
+        <section class="cta">
+            <p><span class="prompt">$</span> <span class="command">O que fazer agora?</span></p>
+            <div class="cta-buttons">
+                <a href="https://github.com/FreitasCyberSec?tab=repositories" class="button-cta">Ver Projetos no GitHub</a>
+                <a href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" class="button-cta">Conectar no LinkedIn</a>
+            </div>
         </section>
-
     </div>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#terminal-output', {
-            strings: [
-                '<span class="prompt">$</span> <span class="command">./humberto.sh --profile</span><br><br><span class="output">> EXECUTANDO SCRIPT...</span><br><br><span class="output">> NOME: Humberto Freitas</span><br><span class="output">> STATUS: Estudante de Engenharia de Software</span><br><span class="output">> OBJETIVO: Especialização em Cybersecurity</span><br><br><span class="prompt">$</span> <span class="command">cat /etc/motd</span><br><br><span class="output">"Bem-vindo ao meu portfólio. Role para baixo para ver minhas habilidades."</span><br><br><span class="prompt">$</span> <span class="command">_</span>'
-            ],
-            typeSpeed: 40,
-            backSpeed: 0,
-            loop: false,
-            showCursor: true,
-            cursorChar: '█',
-            contentType: 'html', // IMPORTANTE: para renderizar as tags <span>
-        });
-    </script>
-</body>
+    </body>
 </html>
