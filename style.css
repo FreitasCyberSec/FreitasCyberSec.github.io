@@ -142,3 +142,42 @@ section h4 {
 .glitch::after { left: -2px; text-shadow: -2px 0 #00ffff, 2px 2px var(--accent); animation: glitch-anim-2 2s infinite linear alternate-reverse; }
 @keyframes glitch-anim-1 { 0% { clip: rect(42px, 9999px, 44px, 0); } 5% { clip: rect(12px, 9999px, 62px, 0); } 10% { clip: rect(48px, 9999px, 32px, 0); } 15% { clip: rect(18px, 9999px, 88px, 0); } 20% { clip: rect(3px, 9999px, 53px, 0); } 25% { clip: rect(23px, 9999px, 12px, 0); } 30% { clip: rect(81px, 9999px, 54px, 0); } 35% { clip: rect(2px, 9999px, 8px, 0); } 40% { clip: rect(87px, 9999px, 3px, 0); } 45% { clip: rect(54px, 9999px, 50px, 0); } 50% { clip: rect(10px, 9999px, 95px, 0); } 55% { clip: rect(70px, 9999px, 11px, 0); } 60% { clip: rect(36px, 9999px, 97px, 0); } 65% { clip: rect(59px, 9999px, 10px, 0); } 70% { clip: rect(80px, 9999px, 57px, 0); } 75% { clip: rect(37px, 9999px, 66px, 0); } 80% { clip: rect(52px, 9999px, 92px, 0); } 85% { clip: rect(17px, 9999px, 7px, 0); } 90% { clip: rect(62px, 9999px, 91px, 0); } 95% { clip: rect(41px, 9999px, 4px, 0); } 100% { clip: rect(2px, 9999px, 68px, 0); } }
 @keyframes glitch-anim-2 { 0% { clip: rect(5px, 9999px, 86px, 0); } 5% { clip: rect(33px, 9999px, 18px, 0); } 10% { clip: rect(85px, 9999px, 99px, 0); } 15% { clip: rect(42px, 9999px, 1px, 0); } 20% { clip: rect(63px, 9999px, 72px, 0); } 25% { clip: rect(10px, 9999px, 45px, 0); } 30% { clip: rect(50px, 9999px, 95px, 0); } 35% { clip: rect(26px, 9999px, 12px, 0); } 40% { clip: rect(55px, 9999px, 34px, 0); } 45% { clip: rect(17px, 9999px, 37px, 0); } 50% { clip: rect(44px, 9999px, 74px, 0); } 55% { clip: rect(1px, 9999px, 60px, 0); } 60% { clip: rect(73px, 9999px, 2px, 0); } 65% { clip: rect(3px, 9999px, 50px, 0); } 70% { clip: rect(88px, 9999px, 4px, 0); } 75% { clip: rect(59px, 9999px, 8px, 0); } 80% { clip: rect(23px, 9999px, 38px, 0); } 85% { clip: rect(98px, 9999px, 93px, 0); } 90% { clip: rect(11px, 9999px, 20px, 0); } 95% { clip: rect(88px, 9999px, 13px, 0); } 100% { clip: rect(31px, 9999px, 64px, 0); } }
+
+/* --- MEDIA QUERY PARA CELULARES --- */
+/* (Tudo que estiver aqui dentro só vai valer para telas com 768px de largura ou menos) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px; /* Menos espaçamento nas laterais */
+    }
+
+    .intro h1 {
+        font-size: 2.2em; /* Fonte do nome um pouco menor */
+    }
+    
+    .intro p {
+        font-size: 1em; /* Fonte do subtítulo menor */
+    }
+
+    .avatar {
+        width: 120px; /* Avatar menor */
+        height: 120px;
+    }
+
+    section h3 {
+        font-size: 1.5em; /* Títulos de seção menores */
+    }
+
+    /* Prompt do terminal mais curto para não quebrar a linha */
+    section h3::before {
+        content: '~$ '; 
+    }
+
+    .skills-grid img {
+        height: 40px; /* Ícones um pouco menores */
+    }
+
+    .button {
+        padding: 10px 18px; /* Botões um pouco menores */
+        font-size: 0.9em;
+    }
+}
