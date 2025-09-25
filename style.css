@@ -1,9 +1,9 @@
 :root {
     --background: #000000;
-    --text: #E0E0E0;
-    --green: #39FF14; /* Verde Hacker */
-    --grey: #1a1a1a;
-    --border-color: #333;
+    --text: #ffffff;
+    --accent: #ff0000; /* Vermelho Agressivo */
+    --grey-dark: #111111;
+    --grey-light: #333333;
 }
 
 body {
@@ -29,93 +29,126 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid var(--green);
-    box-shadow: 0 0 15px var(--green);
+    border: 3px solid var(--accent);
+    filter: grayscale(80%);
+    transition: filter 0.3s ease;
 }
+.avatar:hover {
+    filter: grayscale(0%);
+}
+
 .intro h1 {
     color: var(--text);
     font-size: 3em;
     margin: 20px 0 10px 0;
 }
+
 .intro p {
-    color: var(--green);
+    color: var(--text);
+    opacity: 0.8;
     font-size: 1.2em;
     margin-bottom: 30px;
-}
-.intro-buttons a {
-    margin: 0 10px;
 }
 
 /* SEÇÕES GERAIS */
 section {
     padding: 40px 0;
 }
-h3 {
-    color: var(--green);
+section h3 {
+    color: var(--text);
     font-size: 2em;
     margin-bottom: 40px;
+    display: inline-block;
+    position: relative;
+}
+section h3::before {
+    content: '[root@freitas ~]# ';
+    color: var(--accent);
+}
+section h4 {
+    color: var(--text);
+    opacity: 0.7;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 /* CARDS ESTILIZADOS */
 .card {
-    background-color: var(--grey);
-    border: 1px solid var(--border-color);
+    background-color: var(--grey-dark);
+    border: 1px solid var(--grey-light);
     padding: 30px;
     text-align: left;
     font-size: 1.1em;
     line-height: 1.7;
-}
-.card p {
-    margin: 0;
 }
 
 /* HABILIDADES E STATS */
 .skills-grid img {
     height: 50px;
     margin: 10px;
+    filter: grayscale(100%);
+    transition: all 0.2s ease-in-out;
 }
-.stats-card {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+.skills-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 /* CERTIFICADOS */
-.cert-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.cert-list li {
-    margin-bottom: 10px;
-}
-.cert-list .prompt {
-    color: var(--green);
-    margin-right: 15px;
-}
+.cert-list { list-style: none; padding: 0; margin: 0; }
+.cert-list li { margin-bottom: 10px; }
+.cert-list .prompt { color: var(--accent); margin-right: 15px; }
 
 /* CONTATO */
-.contact-text {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-.contact-links a {
-     margin: 0 10px;
-}
+.contact-text { font-size: 1.1em; opacity: 0.8; margin-bottom: 30px; }
 
-/* COMPONENTES REUTILIZÁVEIS */
+/* COMPONENTES */
 .button {
     background-color: transparent;
-    border: 1px solid var(--green);
-    color: var(--green);
+    border: 1px solid var(--accent);
+    color: var(--accent);
     padding: 12px 25px;
     text-decoration: none;
     font-family: 'Source Code Pro', monospace;
     font-size: 1em;
     transition: all 0.2s ease-in-out;
+    margin: 0 10px;
 }
 .button:hover {
-    background-color: var(--green);
+    background-color: var(--accent);
     color: var(--background);
-    box-shadow: 0 0 10px var(--green);
+    box-shadow: 0 0 10px var(--accent);
 }
+
+/* EFEITO GLITCH (A SURPRESA) */
+.glitch {
+    position: relative;
+    color: var(--text);
+}
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    overflow: hidden;
+}
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--accent);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00ffff, 2px 2px var(--accent);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 { 0% { clip: rect(42px, 9999px, 44px, 0); } /* ... (rest of keyframes) */ 100% { clip: rect(32px, 9999px, 55px, 0); } }
+@keyframes glitch-anim-2 { 0% { clip: rect(15px, 9999px, 99px, 0); } /* ... (rest of keyframes) */ 100% { clip: rect(80px, 9999px, 60px, 0); } }
+
+/* Adicionei o keyframe completo aqui para evitar cortes */
+@keyframes glitch-anim-1 { 0% { clip: rect(42px, 9999px, 44px, 0); } 5% { clip: rect(12px, 9999px, 62px, 0); } 10% { clip: rect(48px, 9999px, 32px, 0); } 15% { clip: rect(18px, 9999px, 88px, 0); } 20% { clip: rect(3px, 9999px, 53px, 0); } 25% { clip: rect(23px, 9999px, 12px, 0); } 30% { clip: rect(81px, 9999px, 54px, 0); } 35% { clip: rect(2px, 9999px, 8px, 0); } 40% { clip: rect(87px, 9999px, 3px, 0); } 45% { clip: rect(54px, 9999px, 50px, 0); } 50% { clip: rect(10px, 9999px, 95px, 0); } 55% { clip: rect(70px, 9999px, 11px, 0); } 60% { clip: rect(36px, 9999px, 97px, 0); } 65% { clip: rect(59px, 9999px, 10px, 0); } 70% { clip: rect(80px, 9999px, 57px, 0); } 75% { clip: rect(37px, 9999px, 66px, 0); } 80% { clip: rect(52px, 9999px, 92px, 0); } 85% { clip: rect(17px, 9999px, 7px, 0); } 90% { clip: rect(62px, 9999px, 91px, 0); } 95% { clip: rect(41px, 9999px, 4px, 0); } 100% { clip: rect(2px, 9999px, 68px, 0); } }
+@keyframes glitch-anim-2 { 0% { clip: rect(5px, 9999px, 86px, 0); } 5% { clip: rect(33px, 9999px, 18px, 0); } 10% { clip: rect(85px, 9999px, 99px, 0); } 15% { clip: rect(42px, 9999px, 1px, 0); } 20% { clip: rect(63px, 9999px, 72px, 0); } 25% { clip: rect(10px, 9999px, 45px, 0); } 30% { clip: rect(50px, 9999px, 95px, 0); } 35% { clip: rect(26px, 9999px, 12px, 0); } 40% { clip: rect(55px, 9999px, 34px, 0); } 45% { clip: rect(17px, 9999px, 37px, 0); } 50% { clip: rect(44px, 9999px, 74px, 0); } 55% { clip: rect(1px, 9999px, 60px, 0); } 60% { clip: rect(73px, 9999px, 2px, 0); } 65% { clip: rect(3px, 9999px, 50px, 0); } 70% { clip: rect(88px, 9999px, 4px, 0); } 75% { clip: rect(59px, 9999px, 8px, 0); } 80% { clip: rect(23px, 9999px, 38px, 0); } 85% { clip: rect(98px, 9999px, 93px, 0); } 90% { clip: rect(11px, 9999px, 20px, 0); } 95% { clip: rect(88px, 9999px, 13px, 0); } 100% { clip: rect(31px, 9999px, 64px, 0); } }
