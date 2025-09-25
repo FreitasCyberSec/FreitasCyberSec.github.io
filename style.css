@@ -1,89 +1,114 @@
-body {
-    background-color: #000000;
-    color: #00FF00;
-    font-family: 'VT323', monospace; /* Fonte perfeita para terminal retro */
-    font-size: 1.2rem;
-    line-height: 1.4;
-    margin: 0;
-    padding: 15px;
+:root {
+    --background: #000000;
+    --text: #E0E0E0;
+    --green: #39FF14; /* Verde Hacker */
+    --dark-grey: #1a1a1a;
+    --medium-grey: #333;
 }
 
-/* Container principal com efeitos de monitor antigo */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .container {
     width: 100%;
-    height: 100%;
-    /* Efeito de brilho do fósforo verde */
-    text-shadow: 0 0 5px #00FF00, 0 0 2px #00FF00;
-    animation: flicker 0.15s infinite;
+    max-width: 900px;
 }
 
-/* Efeito de Scanlines */
-body::after {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    pointer-events: none;
+/* A JANELA DO TERMINAL */
+.terminal-window {
+    border: 1px solid var(--medium-grey);
+    border-radius: 8px;
+    background-color: var(--dark-grey);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+    margin-bottom: 50px;
 }
 
-/* A tag <pre> preserva os espaços e quebras de linha do texto */
-pre {
+.terminal-header {
+    background-color: var(--medium-grey);
+    padding: 8px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-header .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.terminal-header .red { background-color: #ff5f56; }
+.terminal-header .yellow { background-color: #ffbd2e; }
+.terminal-header .green { background-color: #27c93f; }
+
+.terminal-header span {
+    color: var(--text);
+    font-size: 0.9em;
+}
+
+.terminal-body {
+    padding: 20px;
+    font-size: 1.1em;
+    min-height: 250px;
     white-space: pre-wrap;
     word-wrap: break-word;
-    margin: 0;
 }
 
-a {
-    color: #00FF00;
-    text-decoration: underline;
+/* Estilos para o texto digitado */
+#terminal-output .prompt { color: var(--green); }
+#terminal-output .command { color: #FFFFFF; font-weight: bold; }
+#terminal-output .output { color: var(--text); }
+.typed-cursor { color: var(--green); animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* SEÇÕES DO ARSENAL E CONTATO */
+section {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-a:hover {
-    background-color: #00FF00;
-    color: #000000;
+section h3 {
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.skills-grid img {
+    height: 60px; /* Ajuste o tamanho dos ícones aqui */
+    margin: 10px;
+}
+
+.disclaimer {
+    color: var(--medium-grey);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.contact a {
+    color: var(--green);
     text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 15px;
+    transition: all 0.2s ease;
 }
 
-/* Estilo das partes do terminal */
-.prompt {
-    color: #00FF00; /* Cor do prompt (ex: [user@host ~]$) */
+.contact a:hover {
+    background-color: var(--green);
+    color: var(--background);
+    padding: 5px 10px;
+    border-radius: 4px;
 }
-
-.command {
-    color: #ffffff; /* Cor do comando digitado, para dar um leve contraste */
-    margin-left: 10px;
-}
-
-.output {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 20px;
-}
-
-/* Animação de flicker para emular o monitor */
-@keyframes flicker {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.85; }
-}
-
-/* Cursor piscando no final */
-.command:last-of-type {
-    display: inline-block;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 49% { background-color: transparent; color: #ffffff; }
-    50%, 100% { background-color: #00FF00; color: #000000; }
+.contact .separator {
+    color: var(--medium-grey);
 }
