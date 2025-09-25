@@ -83,19 +83,14 @@ section h4 {
     line-height: 1.7;
 }
 
-/* HABILIDADES E STATS - ALINHAMENTO CORRIGIDO E REFORÇADO */
+/* HABILIDADES E STATS */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Força a centralização dos itens dentro do flex container */
-    align-items: center; /* Alinha verticalmente caso haja quebra de linha */
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-bottom: 20px;
-    /* Remover padding interno, pois pode interferir no calculo de centralização do margin auto */
-    /* Adicionar margin auto para centralizar o bloco skills-grid */
-    margin-left: auto;
-    margin-right: auto;
-    max-width: fit-content; /* Permite que o container se ajuste ao conteúdo, mas ainda seja centralizado */
 }
 .skills-grid img {
     height: 50px;
