@@ -10,49 +10,55 @@
 <body>
     <div class="container">
 
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <div class="button red"></div>
-                <div class="button yellow"></div>
-                <div class="button green"></div>
-                <span>hfreitas@localhost: ~</span>
+        <header class="intro">
+            <img src="https://avatars.githubusercontent.com/u/144941913?v=4" alt="Foto de Humberto Freitas" class="avatar">
+            <h1>Humberto Freitas</h1>
+            <p>// Software Engineering Student | Aspiring Cybersecurity Specialist</p>
+            <div class="intro-buttons">
+                <a href="#about" class="button">Sobre Mim</a>
+                <a href="https://github.com/FreitasCyberSec?tab=repositories" target="_blank" class="button">Repositórios</a>
             </div>
-            <div class="terminal-body">
-                <div id="terminal-output">
-                    <span class="prompt">$</span> <span class="command">./humberto.sh --profile</span><br>
-                    <span class="output">> EXECUTANDO SCRIPT...</span><br><br>
-                    <span class="output">> NOME: Humberto Freitas</span><br>
-                    <span class="output">> STATUS: Estudante de Engenharia de Software</span><br>
-                    <span class="output">> OBJETIVO: Especialização em Cybersecurity</span><br><br>
-                    <span class="prompt">$</span><span class="cursor">█</span>
-                </div>
-            </div>
-        </div>
+        </header>
 
-        <section class="arsenal">
-            <h3>// MEU ARSENAL</h3>
-            <div class="skills-grid">
-                <img src="https://skillicons.dev/icons?i=python,linux,bash,sql,git" title="Python, Linux, Bash, SQL, Git" alt="Core Skills" />
-                <img src="https://skillicons.dev/icons?i=vscode,github,docker" title="VSCode, GitHub, Docker" alt="Development Tools" />
+        <section id="about">
+            <h3>// SOBRE MIM</h3>
+            <div class="card">
+                <p>Estudante de Engenharia de Software de Belo Horizonte, Brasil, com uma paixão por resolver problemas e um forte interesse no universo da Segurança Cibernética. Atualmente, estou construindo uma base sólida em desenvolvimento e lógica de programação, aplicando meus conhecimentos em projetos práticos enquanto me aprofundo nos estudos de segurança digital.</p>
             </div>
         </section>
 
-        <section class="arsenal">
-            <h3>// FOCO DE ESPECIALIZAÇÃO</h3>
+        <section id="skills">
+            <h3>// ARSENAL & ESTATÍSTICAS</h3>
             <div class="skills-grid">
+                <img src="https://skillicons.dev/icons?i=python,linux,bash,sql,git,vscode,docker" title="Python, Linux, Bash, SQL, Git, VSCode, Docker" alt="Core Skills" />
                 <img src="https://skillicons.dev/icons?i=kalilinux,wireshark,metasploit,nmap" title="Kali Linux, Wireshark, Metasploit, Nmap" alt="Cybersecurity Tools" />
             </div>
-             <p class="disclaimer">(Atualmente estudando e aprofundando nessas ferramentas)</p>
-        </section>
-
-        <section class="cta">
-            <p><span class="prompt">$</span> <span class="command">O que fazer agora?</span></p>
-            <div class="cta-buttons">
-                <a href="https://github.com/FreitasCyberSec?tab=repositories" class="button-cta">Ver Projetos no GitHub</a>
-                <a href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" class="button-cta">Conectar no LinkedIn</a>
+            <div class="stats-card">
+                 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=FreitasCyberSec&layout=compact&langs_count=8&theme=radical" alt="Linguagens mais usadas"/>
             </div>
         </section>
-    </div>
 
-    </body>
+        <section id="certs">
+            <h3>// CERTIFICAÇÕES</h3>
+             <div class="card">
+                <ul class="cert-list">
+                    <li><span class="prompt">></span> Certificado em Segurança Ofensiva (Em breve)</li>
+                    <li><span class="prompt">></span> Fundamentos de Redes de Computadores</li>
+                    <li><span class="prompt">></span> Introdução ao Pentest</li>
+                    <li><span class="prompt">></span> [Adicione outro certificado aqui]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>// CONECTE-SE</h3>
+            <p class="contact-text">Estou aberto a novas oportunidades e colaborações. Vamos conversar!</p>
+            <div class="contact-links">
+                <a href="https://github.com/FreitasCyberSec" class="button">GitHub</a>
+                <a href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" class="button">LinkedIn</a>
+            </div>
+        </section>
+
+    </div>
+</body>
 </html>
