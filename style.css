@@ -1,22 +1,23 @@
-/* Definindo a nova paleta de cores */
-:root {
-    --background: #0a0a1a;
-    --text: #EAEAEA;
-    --accent1: #00FFFF; /* Ciano */
-    --accent2: #FF00FF; /* Magenta */
-    --secondary-text: #8b949e;
-}
-
 body {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: 'Fira Code', monospace; /* Nova fonte */
-    line-height: 1.6;
+    background-color: #000000;
+    color: #00FF00;
+    font-family: 'VT323', monospace; /* Fonte perfeita para terminal retro */
+    font-size: 1.2rem;
+    line-height: 1.4;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
 }
 
-/* Efeito de scanlines (linhas de monitor antigo) */
+/* Container principal com efeitos de monitor antigo */
+.container {
+    width: 100%;
+    height: 100%;
+    /* Efeito de brilho do fósforo verde */
+    text-shadow: 0 0 5px #00FF00, 0 0 2px #00FF00;
+    animation: flicker 0.15s infinite;
+}
+
+/* Efeito de Scanlines */
 body::after {
     content: " ";
     display: block;
@@ -25,92 +26,64 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 1px, transparent 1px, transparent 2px);
-    z-index: 10;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5) 1px,
+        transparent 1px,
+        transparent 2px
+    );
     pointer-events: none;
-    opacity: 0.1;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-h1, h3 {
-    color: var(--accent1);
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 0;
-    min-height: 1.2em; 
-}
-
-/* Efeito de brilho para o título */
-.glow {
-    color: var(--accent1);
-    text-shadow: 0 0 5px var(--accent1), 0 0 10px var(--accent1);
-}
-
-.main-title p {
-    font-size: 1.2em;
-    color: var(--secondary-text);
-    margin-top: 5px;
+/* A tag <pre> preserva os espaços e quebras de linha do texto */
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
 }
 
 a {
-    color: var(--accent2); /* Usando o magenta para links */
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    color: #00FF00;
+    text-decoration: underline;
 }
 
 a:hover {
+    background-color: #00FF00;
+    color: #000000;
     text-decoration: none;
-    color: var(--accent1);
-    text-shadow: 0 0 8px var(--accent1); /* Efeito de brilho no hover */
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0,0,0,0), var(--accent1), rgba(0,0,0,0));
-    opacity: 0.5;
+/* Estilo das partes do terminal */
+.prompt {
+    color: #00FF00; /* Cor do prompt (ex: [user@host ~]$) */
 }
 
-section {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.align-left {
-    text-align: left;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Estilo do Terminal Falso */
-.terminal-section h3 {
-    text-align: left;
-    color: var(--accent1);
-    font-weight: bold;
-}
-/* Adiciona o cifrão '$' antes do comando */
-.terminal-section h3::before {
-    content: '[freitas@cybersec ~]$ ';
-    color: var(--accent2);
+.command {
+    color: #ffffff; /* Cor do comando digitado, para dar um leve contraste */
+    margin-left: 10px;
 }
 
 .output {
-    padding-left: 20px;
-    border-left: 2px solid var(--accent1);
-    border-opacity: 0.5;
-    margin-top: 10px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
-.output .prompt {
-    color: var(--accent2);
-    margin-right: 10px;
+
+/* Animação de flicker para emular o monitor */
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.85; }
+}
+
+/* Cursor piscando no final */
+.command:last-of-type {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% { background-color: transparent; color: #ffffff; }
+    50%, 100% { background-color: #00FF00; color: #000000; }
 }
