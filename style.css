@@ -8,15 +8,15 @@
   --border:    #21262D;   /* bordas discretas     */
   --text:      #E6EDF3;   /* texto principal      */
   --muted:     #8B949E;   /* texto secundário     */
-  --green:     #FF0033;   /* agora vermelho */
+  --green:     #00FF88;   /* terminal / security  */
   --cyan:      #00D9FF;   /* cloud / tech         */
 
   --maxw: 1080px;
   --gap: clamp(1rem, 2.5vw, 1.5rem);
   --section-y: clamp(3.5rem, 9vw, 6.5rem);
 
-  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --mono: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: 'Chakra Petch', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
   --radius: 10px;
   --ease: cubic-bezier(.2, .7, .2, 1);
@@ -110,10 +110,15 @@ body::before {
 }
 
 .name {
-  font-size: clamp(2.1rem, 7vw, 3.4rem);
-  font-weight: 700; line-height: 1.02; letter-spacing: -1px;
+  font-family: var(--mono);          /* terminal/hacker */
+  text-transform: uppercase;
+  font-size: clamp(1.7rem, 6vw, 3rem);
+  font-weight: 400; line-height: 1.06;
+  letter-spacing: clamp(1px, .6vw, 4px);
   margin: 0;
+  overflow-wrap: break-word;         /* nunca estoura a tela no celular */
 }
+.hero__id > div:last-child { min-width: 0; }  /* deixa o nome encolher ao lado do avatar */
 .role { color: var(--green); font-size: clamp(.82rem, 2vw, .95rem); margin: .7rem 0 .15rem; letter-spacing: .3px; }
 .loc  { color: var(--muted); font-size: .82rem; margin: 0; }
 
