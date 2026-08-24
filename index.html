@@ -1,627 +1,292 @@
-```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description"
-        content="Humberto Freitas — Estudante de Engenharia de Software com foco em Cybersecurity, desenvolvimento, Linux, Cloud e DevSecOps.">
+  <!-- ============================================================
+       SEO  —  edite os textos entre aspas se quiser mudar a chamada
+       ============================================================ -->
+  <title>Humberto Freitas — Software Engineering Student · Cybersecurity</title>
+  <meta name="description" content="Humberto Freitas — estudante de Engenharia de Software no UniBH construindo carreira em Software Engineering e Cybersecurity. Belo Horizonte, Brasil." />
+  <meta name="author" content="Humberto Freitas" />
+  <meta name="theme-color" content="#08090C" />
 
-    <meta name="author" content="Humberto Freitas">
+  <!-- Open Graph (redes sociais) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Humberto Freitas — Software Engineering · Cybersecurity" />
+  <meta property="og:description" content="Building software. Learning security. Engineering systems." />
+  <meta property="og:url" content="https://freitascybersec.github.io/" />
+  <!-- ATUALIZAR: gere uma imagem 1200x630 e salve em assets/og-cover.png -->
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Humberto Freitas | Software Engineering & Cybersecurity</title>
+  <!-- Favicon em SVG inline (terminal verde) — sem arquivo extra -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D1117'/%3E%3Cpath d='M8 11l5 5-5 5' fill='none' stroke='%2300FF88' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='17' y1='22' x2='24' y2='22' stroke='%2300D9FF' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Fontes: Inter (texto) + JetBrains Mono (terminal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <a href="#hero" class="skip-link">Skip to content</a>
 
-<div class="container">
+  <div class="wrap">
 
-    <!-- ============================= -->
-    <!-- HEADER -->
-    <!-- ============================= -->
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <header class="hero" id="hero">
+      <div class="hero__status" aria-label="Current status: building">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="mono">STATUS: BUILDING</span>
+      </div>
 
-    <header class="intro">
-
-        <img
-            src="avatar.png.jpg"
-            alt="Humberto Freitas"
-            class="avatar"
-        >
-
-        <p class="terminal-label">
-            user@humberto:~$
-        </p>
-
-        <h1 class="glitch" data-text="Humberto Freitas">
-            Humberto Freitas
-        </h1>
-
-        <p class="role">
-            Software Engineering Student
-            <span>|</span>
-            Cybersecurity
-        </p>
-
-        <p class="location">
-            Belo Horizonte, Brazil
-        </p>
-
-        <div class="intro-buttons">
-
-            <a href="#about" class="button">
-                ./sobre
-            </a>
-
-            <a
-                href="https://github.com/FreitasCyberSec"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button"
-            >
-                ./github
-            </a>
-
-            <a href="#contact" class="button">
-                ./contato
-            </a>
-
+      <!-- ATUALIZAR (foto): coloque sua imagem em assets/avatar.jpg.
+           Se não houver imagem, o monograma "HF" aparece automaticamente. -->
+      <div class="hero__id">
+        <div class="avatar" role="img" aria-label="Humberto Freitas">
+          <img src="assets/avatar.jpg" alt="" onerror="this.remove()" />
+          <span class="avatar__mono" aria-hidden="true">HF</span>
         </div>
 
+        <div>
+          <h1 class="name glitch" data-text="Humberto Freitas">Humberto Freitas</h1>
+          <p class="role mono">Software Engineering Student · Cybersecurity</p>
+          <p class="loc mono">Belo Horizonte, Brazil</p>
+        </div>
+      </div>
+
+      <p class="hero__line">Building software. Learning security. Engineering systems.</p>
+
+      <nav class="hero__actions" aria-label="Primary links">
+        <!-- ATUALIZAR: links -->
+        <a class="btn btn--primary" href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <a class="btn" href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+        <!-- ATUALIZAR: salve seu PDF como assets/curriculo.pdf -->
+        <a class="btn" href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer">CURRÍCULO</a>
+        <a class="btn" href="#contact">CONTATO</a>
+      </nav>
     </header>
 
+    <main>
 
-    <!-- ============================= -->
-    <!-- ABOUT -->
-    <!-- ============================= -->
-
-    <section id="about">
-
-        <h3>
-            $ cat ~/about.txt
-        </h3>
-
-        <div class="card">
-
-            <p>
-                Sou estudante de Engenharia de Software, atualmente
-                desenvolvendo minha formação técnica nas áreas de
-                desenvolvimento de software, infraestrutura, Linux,
-                cloud computing e cybersecurity.
-            </p>
-
-            <p>
-                Meu objetivo é construir uma base sólida em engenharia
-                de software e segurança, transformando conhecimento
-                teórico em projetos práticos e soluções reais.
-            </p>
-
-            <p>
-                Atualmente estou aprofundando meus conhecimentos em
-                Python, Git, Linux, Docker, desenvolvimento de APIs,
-                bancos de dados, cloud e fundamentos de segurança da
-                informação.
-            </p>
-
+      <!-- ============================================================
+           ABOUT
+           ============================================================ -->
+      <section id="about" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> cat about.txt</h2>
+        <div class="prose">
+          <p>I'm a Software Engineering student based in Belo Horizonte, Brazil, focused on building reliable software and learning how to secure it. My interests sit at the intersection of development, Linux, cloud, and cybersecurity.</p>
+          <p>Right now I'm building a solid foundation: writing code, working through real projects, getting comfortable on the command line, and studying security fundamentals. I care about clean code, systems that hold up, and doing the work in the open.</p>
         </div>
+      </section>
 
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- EDUCATION -->
-    <!-- ============================= -->
-
-    <section id="education">
-
-        <h3>
-            $ cat ~/education
-        </h3>
-
-        <div class="card">
-
-            <h4>🎓 Engenharia de Software</h4>
-
-            <p>
-                <strong>UniBH</strong>
-            </p>
-
-            <p>
-                2024 — 2028
-            </p>
-
-            <p class="status">
-                Status: Em andamento
-            </p>
-
+      <!-- ============================================================
+           EDUCATION
+           ============================================================ -->
+      <section id="education" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> cat education</h2>
+        <!-- ATUALIZAR: curso, instituição, período e status -->
+        <div class="edu">
+          <div class="edu__head">
+            <h3>Software Engineering</h3>
+            <span class="tag tag--live mono">In progress</span>
+          </div>
+          <p class="edu__org mono">UniBH — Centro Universitário de Belo Horizonte</p>
+          <p class="edu__meta mono">2024 — 2028 (expected)</p>
         </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- PROJECTS -->
-    <!-- ============================= -->
-
-    <section id="projects">
-
-        <h3>
-            $ ls -la ~/projects
-        </h3>
-
-        <div class="projects-grid">
-
-
-            <!-- PROJECT 01 -->
-
-            <article class="project-card">
-
-                <div class="project-number">
-                    01
-                </div>
-
-                <h4>
-                    Software Engineering Projects
-                </h4>
-
-                <p>
-                    Projetos acadêmicos e pessoais desenvolvidos
-                    durante minha formação em Engenharia de Software.
-                </p>
-
-                <div class="tags">
-
-                    <span>Python</span>
-                    <span>Java</span>
-                    <span>Git</span>
-                    <span>SQL</span>
-
-                </div>
-
-                <a
-                    href="https://github.com/FreitasCyberSec"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                >
-                    → Ver no GitHub
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 02 -->
-
-            <article class="project-card">
-
-                <div class="project-number">
-                    02
-                </div>
-
-                <h4>
-                    Cybersecurity Labs
-                </h4>
-
-                <p>
-                    Laboratórios e estudos práticos relacionados a
-                    Linux, redes, segurança web, análise e fundamentos
-                    de cybersecurity.
-                </p>
-
-                <div class="tags">
-
-                    <span>Linux</span>
-                    <span>Wireshark</span>
-                    <span>Networking</span>
-                    <span>CyberSec</span>
-
-                </div>
-
-                <a
-                    href="https://github.com/FreitasCyberSec"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                >
-                    → Ver projetos
-                </a>
-
-            </article>
-
-
-            <!-- PROJECT 03 -->
-
-            <article class="project-card">
-
-                <div class="project-number">
-                    03
-                </div>
-
-                <h4>
-                    Automation & Infrastructure
-                </h4>
-
-                <p>
-                    Estudos e projetos envolvendo automação,
-                    infraestrutura, containers e ambientes Linux.
-                </p>
-
-                <div class="tags">
-
-                    <span>Bash</span>
-                    <span>Docker</span>
-                    <span>Linux</span>
-                    <span>Git</span>
-
-                </div>
-
-                <a
-                    href="https://github.com/FreitasCyberSec"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                >
-                    → Ver projetos
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- SKILLS -->
-    <!-- ============================= -->
-
-    <section id="skills">
-
-        <h3>
-            $ cat /etc/skills.cfg
-        </h3>
-
-
-        <!-- PROGRAMMING -->
-
-        <h4>
-            # Desenvolvimento
-        </h4>
-
-        <div class="skills-grid">
-
-            <img
-                src="https://skillicons.dev/icons?i=python,java,js,html,css"
-                title="Python, Java, JavaScript, HTML e CSS"
-                alt="Tecnologias de desenvolvimento"
-            >
-
-        </div>
-
-
-        <!-- ENGINEERING -->
-
-        <h4>
-            # Engenharia de Software
-        </h4>
-
-        <div class="skills-grid">
-
-            <img
-                src="https://skillicons.dev/icons?i=git,github,docker,vscode,postgres"
-                title="Git, GitHub, Docker, VS Code e PostgreSQL"
-                alt="Ferramentas de engenharia de software"
-            >
-
-        </div>
-
-
-        <!-- SYSTEMS -->
-
-        <h4>
-            # Sistemas & Infraestrutura
-        </h4>
-
-        <div class="skills-grid">
-
-            <img
-                src="https://skillicons.dev/icons?i=linux,bash,powershell,nginx"
-                title="Linux, Bash, PowerShell e Nginx"
-                alt="Sistemas e infraestrutura"
-            >
-
-        </div>
-
-
-        <!-- CYBERSECURITY -->
-
-        <h4>
-            # Cybersecurity
-        </h4>
-
-        <div class="skills-grid">
-
-            <img
-                src="https://skillicons.dev/icons?i=kali,arch,ubuntu"
-                title="Kali Linux, Arch Linux e Ubuntu"
-                alt="Cybersecurity e Linux"
-            >
-
-        </div>
-
-
-        <!-- LEARNING -->
-
-        <h4>
-            # Em desenvolvimento
-        </h4>
-
-        <div class="skills-learning">
-
-            <span>AWS</span>
-            <span>Azure</span>
-            <span>Terraform</span>
-            <span>Kubernetes</span>
-            <span>CI/CD</span>
-            <span>APIs</span>
-            <span>SQL</span>
-            <span>DevSecOps</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- CERTIFICATIONS -->
-    <!-- ============================= -->
-
-    <section id="certifications">
-
-        <h3>
-            $ ls ~/certifications
-        </h3>
-
-        <div class="card">
-
-            <p class="section-label">
-                // Certificações conquistadas
-            </p>
-
-            <ul class="cert-list">
-
-                <li>
-                    <span class="prompt">></span>
-                    Nenhuma certificação profissional adicionada ainda.
-                </li>
-
-            </ul>
-
-
-            <p class="section-label">
-                // Atualmente estudando
-            </p>
-
-            <ul class="cert-list">
-
-                <li>
-                    <span class="prompt">></span>
-                    CompTIA Security+
-                </li>
-
-                <li>
-                    <span class="prompt">></span>
-                    ISC2 Certified in Cybersecurity (CC)
-                </li>
-
-            </ul>
-
-
-            <p class="section-label">
-                // Objetivos futuros
-            </p>
-
-            <ul class="cert-list">
-
-                <li>
-                    <span class="prompt">></span>
-                    OSCP
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- CURRENT FOCUS -->
-    <!-- ============================= -->
-
-    <section id="focus">
-
-        <h3>
-            $ cat ~/current_focus
-        </h3>
-
-        <div class="card">
-
-            <ul class="focus-list">
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Engenharia de Software
-                </li>
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Python
-                </li>
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Linux
-                </li>
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Git & GitHub
-                </li>
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Docker
-                </li>
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Cybersecurity
-                </li>
-
-                <li>
-                    <span class="prompt">[+]</span>
-                    Cloud Computing
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- PROFESSIONAL -->
-    <!-- ============================= -->
-
-    <section id="professional">
-
-        <h3>
-            $ ls ~/professional
-        </h3>
-
-        <div class="professional-grid">
-
-            <a
-                href="https://github.com/FreitasCyberSec"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="professional-card"
-            >
-                <strong>GitHub</strong>
-                <span>Projetos & código</span>
-            </a>
-
-
-            <a
-                href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="professional-card"
-            >
-                <strong>LinkedIn</strong>
-                <span>Perfil profissional</span>
-            </a>
-
-
-            <!-- Substitua pelo seu Lattes quando estiver criado -->
-
-            <a
-                href="#"
-                class="professional-card"
-            >
-                <strong>Lattes</strong>
-                <span>Perfil acadêmico</span>
-            </a>
-
-
-            <!-- Coloque seu currículo PDF aqui -->
-
-            <a
-                href="curriculo.pdf"
-                target="_blank"
-                class="professional-card"
-            >
-                <strong>Currículo</strong>
-                <span>Download / Visualização</span>
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- CONTACT -->
-    <!-- ============================= -->
-
-    <section id="contact">
-
-        <h3>
-            $ ./contact.sh
-        </h3>
-
-        <div class="card">
-
-            <p class="contact-text">
-                Aberto a oportunidades, projetos, colaboração e
-                desenvolvimento profissional.
-            </p>
-
-            <div class="contact-links">
-
-                <a
-                    href="https://github.com/FreitasCyberSec"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button"
-                >
-                    GitHub
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button"
-                >
-                    LinkedIn
-                </a>
-
+      </section>
+
+      <!-- ============================================================
+           PROJECTS
+           Cada card segue o mesmo molde. Duplique um bloco .project
+           para adicionar um projeto novo. Placeholders abaixo.
+           ============================================================ -->
+      <section id="projects" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> ls -la projects</h2>
+
+        <div class="grid">
+
+          <!-- ATUALIZAR: projeto real. Descomente/edite quando tiver repo/demo. -->
+          <article class="project">
+            <div class="project__top">
+              <span class="project__num mono">01</span>
+              <span class="tag mono">Academic</span>
             </div>
+            <h3 class="project__name">Smart traffic light (ESP-NOW)</h3>
+            <p class="project__desc">Embedded prototype: two ESP8266 modules communicating over the ESP-NOW protocol. A traffic-light module drives a signal cycle and an autonomous car module stops and resumes based on the state received, with a reed-switch sensor for redundancy.</p>
+            <ul class="stack mono" aria-label="Technologies">
+              <li>C++</li><li>ESP8266</li><li>ESP-NOW</li><li>Arduino</li>
+            </ul>
+            <div class="project__links mono">
+              <!-- ATUALIZAR: aponte para o repositório real -->
+              <a href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">code →</a>
+            </div>
+          </article>
+
+          <!-- Placeholder — troque pelo próximo projeto -->
+          <article class="project project--ghost">
+            <div class="project__top">
+              <span class="project__num mono">02</span>
+              <span class="tag tag--soft mono">Building</span>
+            </div>
+            <h3 class="project__name">Currently building</h3>
+            <p class="project__desc">Next project in progress. This slot is a template — copy the card above and fill in name, description, stack and links.</p>
+            <ul class="stack mono" aria-label="Technologies"><li>—</li></ul>
+            <div class="project__links mono"><span class="muted">coming soon</span></div>
+          </article>
+
+          <!-- Placeholder -->
+          <article class="project project--ghost">
+            <div class="project__top">
+              <span class="project__num mono">03</span>
+              <span class="tag tag--soft mono">Planned</span>
+            </div>
+            <h3 class="project__name">Project coming soon</h3>
+            <p class="project__desc">Reserved for an upcoming security or automation project.</p>
+            <ul class="stack mono" aria-label="Technologies"><li>—</li></ul>
+            <div class="project__links mono"><span class="muted">coming soon</span></div>
+          </article>
 
         </div>
+      </section>
 
-    </section>
+      <!-- ============================================================
+           SKILLS
+           Mova cada item entre as três listas conforme SEU nível real.
+           Nada aqui afirma domínio profissional.
+           ============================================================ -->
+      <section id="skills" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> cat skills.cfg</h2>
 
+        <div class="skills">
+          <div class="skills__col">
+            <h3 class="skills__tier mono"># comfortable</h3>
+            <ul class="chips mono">
+              <li>Python</li><li>HTML</li><li>CSS</li><li>Git</li><li>GitHub</li><li>Linux</li><li>Bash</li>
+            </ul>
+          </div>
 
-    <!-- ============================= -->
-    <!-- FOOTER -->
-    <!-- ============================= -->
+          <div class="skills__col">
+            <h3 class="skills__tier mono"># currently learning</h3>
+            <ul class="chips chips--cyan mono">
+              <li>Java</li><li>JavaScript</li><li>SQL</li><li>PostgreSQL</li><li>Docker</li><li>REST APIs</li><li>Networking</li>
+            </ul>
+          </div>
 
-    <footer>
+          <div class="skills__col">
+            <h3 class="skills__tier mono"># on the roadmap</h3>
+            <ul class="chips chips--muted mono">
+              <li>Kali Linux</li><li>Wireshark</li><li>Web Security</li><li>Nginx</li><li>PowerShell</li>
+              <li>AWS</li><li>Azure</li><li>Terraform</li><li>Kubernetes</li><li>CI/CD</li><li>DevSecOps</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <p>
-            root@humberto:~$ echo "Building. Learning. Securing."
-        </p>
+      <!-- ============================================================
+           CURRENT FOCUS  —  fácil de atualizar: edite os <li>
+           ============================================================ -->
+      <section id="focus" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> cat current_focus</h2>
+        <ul class="focus mono">
+          <li><span class="plus">[+]</span> Software engineering fundamentals</li>
+          <li><span class="plus">[+]</span> Python</li>
+          <li><span class="plus">[+]</span> Linux &amp; the command line</li>
+          <li><span class="plus">[+]</span> Git &amp; GitHub</li>
+          <li><span class="plus">[+]</span> Docker</li>
+          <li><span class="plus">[+]</span> Cybersecurity basics</li>
+          <li><span class="plus">[+]</span> Cloud computing</li>
+        </ul>
+      </section>
 
-        <p>
-            © 2026 Humberto Freitas
-        </p>
+      <!-- ============================================================
+           CERTIFICATIONS
+           Quando conquistar uma, mova para a lista "Earned" e
+           preencha nome, organização, ano e link da credencial.
+           ============================================================ -->
+      <section id="certs" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> ls certifications</h2>
 
+        <div class="certs">
+          <div class="certs__group">
+            <h3 class="certs__label mono">Earned</h3>
+            <!-- ATUALIZAR: nenhuma ainda. Ao conquistar, use o modelo comentado. -->
+            <p class="empty mono">// none yet — first ones in progress below</p>
+            <!--
+            <ul class="certs__list mono">
+              <li>
+                <span class="ok">✔</span> Name — Organization · 2027
+                <a href="LINK_DA_CREDENCIAL" target="_blank" rel="noopener noreferrer">verify →</a>
+              </li>
+            </ul>
+            -->
+          </div>
+
+          <div class="certs__group">
+            <h3 class="certs__label mono">Currently studying</h3>
+            <ul class="certs__list mono">
+              <li><span class="wip">◐</span> CompTIA Security+</li>
+              <li><span class="wip">◐</span> ISC2 Certified in Cybersecurity (CC)</li>
+            </ul>
+          </div>
+
+          <div class="certs__group">
+            <h3 class="certs__label mono">Future goal</h3>
+            <ul class="certs__list mono">
+              <li><span class="goal">○</span> OSCP — Offensive Security Certified Professional</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PROFESSIONAL / LINKS
+           ============================================================ -->
+      <section id="professional" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> ls professional</h2>
+        <ul class="links">
+          <!-- ATUALIZAR: links -->
+          <li><a href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer"><span class="links__k mono">GitHub</span><span class="links__v mono">github.com/FreitasCyberSec →</span></a></li>
+          <li><a href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank" rel="noopener noreferrer"><span class="links__k mono">LinkedIn</span><span class="links__v mono">in/humberto-freitas →</span></a></li>
+          <!-- ATUALIZAR: cole a URL do seu Lattes -->
+          <li><a href="#" target="_blank" rel="noopener noreferrer"><span class="links__k mono">Lattes</span><span class="links__v mono">academic profile →</span></a></li>
+          <!-- ATUALIZAR: assets/curriculo.pdf -->
+          <li><a href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer"><span class="links__k mono">Currículo</span><span class="links__v mono">curriculo.pdf →</span></a></li>
+        </ul>
+      </section>
+
+      <!-- ============================================================
+           CONTACT
+           ============================================================ -->
+      <section id="contact" class="section reveal">
+        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">portfolio</span><span class="path">:~</span><span class="sym">$</span> ./contact.sh</h2>
+        <p class="prose">Open to internships, entry-level opportunities, projects, collaboration and professional networking. If you're building something interesting, let's talk.</p>
+        <nav class="hero__actions" aria-label="Contact links">
+          <a class="btn btn--primary" href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">GITHUB</a>
+          <a class="btn" href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+          <!-- ATUALIZAR: seu e-mail -->
+          <a class="btn" href="mailto:seu-email@exemplo.com">E-MAIL</a>
+        </nav>
+      </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="foot mono">
+      <p class="foot__cmd"><span class="user">root</span><span class="at">@</span><span class="host">humberto</span><span class="path">:~</span><span class="sym">$</span> echo "Building. Learning. Securing."</p>
+      <p class="foot__c">© <span id="year">2026</span> Humberto Freitas</p>
     </footer>
 
-</div>
+  </div>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
-```
