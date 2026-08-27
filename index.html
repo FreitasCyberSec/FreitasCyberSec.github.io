@@ -5,232 +5,235 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Humberto Freitas — Software Engineering · Cybersecurity</title>
-  <meta name="description" content="Humberto Freitas — Software Engineering student & Cybersecurity enthusiast. Building secure systems, learning offensive/defensive security." />
+  <meta name="description" content="Humberto Freitas — Software Engineering Student & Cybersecurity Professional. Building resilient systems, analyzing vulnerabilities, and securing infrastructure." />
   <meta name="author" content="Humberto Freitas" />
-  <meta name="theme-color" content="#05080A" />
+  <meta name="theme-color" content="#0B1120" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Humberto Freitas — Software Engineering · Cybersecurity" />
-  <meta property="og:description" content="Building software. Learning security. Engineering systems." />
+  <meta property="og:description" content="Building secure software. Analyzing threats. Engineering resilient systems." />
   <meta property="og:url" content="https://freitascybersec.github.io/" />
   <meta property="og:image" content="assets/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D1117'/%3E%3Cpath d='M8 11l5 5-5 5' fill='none' stroke='%2300FF88' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='17' y1='22' x2='24' y2='22' stroke='%2300D9FF' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B1120'/%3E%3Cpath d='M16 4l10 4v8c0 6-4.5 10-10 12-5.5-2-10-6-10-12V8l10-4z' fill='none' stroke='%2338BDF8' stroke-width='2'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a href="#hero" class="skip-link">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- TOP HUD (Heads Up Display) -->
-  <div class="hud-top mono">
-    <span class="hud-left">SECURE_CONNECTION: <span class="hud-ok">ESTABLISHED</span></span>
-    <span class="hud-right" id="live-clock">SYS_TIME: 00:00:00</span>
-  </div>
+  <nav class="navbar">
+    <div class="nav__container">
+      <a href="#" class="nav__brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span class="nav__name">Humberto Freitas</span>
+      </a>
+      <div class="nav__links">
+        <a href="#about">About</a>
+        <a href="#skills">Arsenal</a>
+        <a href="#projects">Operations</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-  <div class="wrap">
+  <main id="main" class="container">
 
-    <!-- ============================================================
-         HERO (SECOPS PROFILE)
-         ============================================================ -->
-    <header class="hero" id="hero">
-      <div class="hero__status" aria-label="System Status">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="mono">SYSTEM: ONLINE · INTRUSION_DETECTION: ACTIVE</span>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero__status">
+        <span class="status-dot"></span>
+        <span>System Status: Online · Open to Opportunities</span>
       </div>
 
-      <div class="hero__id">
-        <div class="avatar" role="img" aria-label="Humberto Freitas">
-          <img src="assets/avatar.jpg" alt="" onerror="this.remove()" />
-          <span class="avatar__mono" aria-hidden="true">HF</span>
-        </div>
+      <h1 class="hero__title">Cybersecurity & <br><span class="hero__accent">Software Engineering</span></h1>
+      <p class="hero__subtitle">
+        Software Engineering student based in Belo Horizonte, Brazil. I build resilient applications, analyze vulnerabilities, and learn the offensive mindset required to defend modern infrastructure.
+      </p>
 
-        <div>
-          <h1 class="name glitch" data-text="Humberto Freitas">Humberto Freitas</h1>
-          <p class="role mono">Software Engineering · Cybersecurity</p>
-          <p class="loc mono">Belo Horizonte, Brazil · UTC-03</p>
-        </div>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">
+          View GitHub
+        </a>
+        <a class="btn btn--ghost" href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer">
+          Download CV
+        </a>
       </div>
 
-      <p class="hero__line" id="typewriter"></p>
-
-      <nav class="hero__actions" aria-label="Primary links">
-        <a class="btn btn--primary" href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">GITHUB</a>
-        <a class="btn" href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-        <a class="btn" href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer">CURRÍCULO</a>
-        <a class="btn" href="#contact">CONTATO</a>
-      </nav>
+      <div class="hero__metrics">
+        <div class="metric">
+          <span class="metric__value">2028</span>
+          <span class="metric__label">Expected Graduation</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">Zero-Trust</span>
+          <span class="metric__label">Architecture Mindset</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">Sec+</span>
+          <span class="metric__label">In Progress</span>
+        </div>
+      </div>
     </header>
 
-    <main>
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <div class="section__header">
+        <span class="section__tag">01. // About</span>
+        <h2 class="section__title">Defending systems through engineering</h2>
+      </div>
+      <div class="prose">
+        <p>I am a Software Engineering student at UniBH focused on the intersection of development, cloud infrastructure, and cybersecurity. My academic path is built around writing secure code and understanding how systems behave under attack.</p>
+        <p>Right now, I'm building a solid foundation in Linux administration, network traffic analysis, and secure software development. I believe in a proactive approach to security—designing systems that hold up under pressure rather than patching them reactively.</p>
+      </div>
+    </section>
 
-      <!-- ============================================================
-           WHOAMI (ABOUT)
-           ============================================================ -->
-      <section id="about" class="section reveal">
-        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">secops</span><span class="path">:~</span><span class="sym">$</span> whoami</h2>
-        <div class="prose">
-          <p>Software Engineering student based in Belo Horizonte, Brazil. I operate at the intersection of development, Linux, cloud, and cybersecurity. My focus is on building resilient systems and understanding how to break them.</p>
-          <p>Currently building a solid foundation in secure coding, network analysis, and systems architecture. I believe in clean code, systems that hold up under pressure, and the offensive mindset required to defend networks effectively.</p>
+    <!-- SKILLS (ARSENAL) -->
+    <section id="skills" class="section reveal">
+      <div class="section__header">
+        <span class="section__tag">02. // Arsenal</span>
+        <h2 class="section__title">Security Domains & Stack</h2>
+      </div>
+
+      <div class="domains">
+        <div class="domain__card">
+          <div class="domain__icon domain__icon--red">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12h22M1 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10S1 17.523 1 12z"/></svg>
+          </div>
+          <h3>Offensive Security (Red)</h3>
+          <p>Vulnerability identification, network scanning, and penetration testing fundamentals.</p>
+          <ul class="chips">
+            <li>Kali Linux</li><li>Nmap</li><li>Wireshark</li><li>Web Exploitation</li>
+          </ul>
         </div>
-      </section>
 
-      <!-- ============================================================
-           ENGAGEMENTS (PROJECTS)
-           ============================================================ -->
-      <section id="projects" class="section reveal">
-        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">secops</span><span class="path">:~</span><span class="sym">$</span> ls -la /engagements/</h2>
-
-        <div class="grid">
-
-          <article class="project">
-            <div class="project__top">
-              <span class="project__num mono">OP_01</span>
-              <span class="tag mono">IoT Security</span>
-            </div>
-            <h3 class="project__name">Smart Traffic Light (ESP-NOW)</h3>
-            <p class="project__desc">Embedded prototype: two ESP8266 modules communicating over ESP-NOW. Traffic-light module drives the signal cycle while an autonomous car module responds to state changes, using a reed-switch for redundancy.</p>
-            <ul class="stack mono" aria-label="Technologies">
-              <li>C++</li><li>ESP8266</li><li>ESP-NOW</li><li>Arduino</li>
-            </ul>
-            <div class="project__links mono">
-              <a href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">view_report →</a>
-            </div>
-          </article>
-
-          <article class="project project--ghost">
-            <div class="project__top">
-              <span class="project__num mono">OP_02</span>
-              <span class="tag tag--soft mono">In Progress</span>
-            </div>
-            <h3 class="project__name">Network Traffic Analyzer</h3>
-            <p class="project__desc">Currently building a Python script to parse PCAP files, detect anomalies, and flag potential port scanning or suspicious payloads.</p>
-            <ul class="stack mono" aria-label="Technologies"><li>Python</li><li>Scapy</li><li>Wireshark</li></ul>
-            <div class="project__links mono"><span class="muted">compiling...</span></div>
-          </article>
-
-          <article class="project project--ghost">
-            <div class="project__top">
-              <span class="project__num mono">OP_03</span>
-              <span class="tag tag--soft mono">Planned</span>
-            </div>
-            <h3 class="project__name">Cloud Hardening Script</h3>
-            <p class="project__desc">Reserved for an upcoming DevSecOps project. Automating baseline security configurations for cloud infrastructure.</p>
-            <ul class="stack mono" aria-label="Technologies"><li>Terraform</li><li>AWS</li></ul>
-            <div class="project__links mono"><span class="muted">awaiting deployment</span></div>
-          </article>
-
+        <div class="domain__card">
+          <div class="domain__icon domain__icon--blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Defensive Security (Blue)</h3>
+          <p>Network monitoring, system hardening, and incident response foundations.</p>
+          <ul class="chips chips--blue">
+            <li>Networking</li><li>Docker Security</li><li>SIEM Basics</li><li>Log Analysis</li>
+          </ul>
         </div>
-      </section>
 
-      <!-- ============================================================
-           ARSENAL (SKILLS)
-           ============================================================ -->
-      <section id="skills" class="section reveal">
-        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">secops</span><span class="path">:~</span><span class="sym">$</span> cat /etc/arsenal.conf</h2>
-
-        <div class="skills">
-          <div class="skills__col">
-            <h3 class="skills__tier mono">// Dev & Infra</h3>
-            <ul class="chips mono">
-              <li>Python</li><li>HTML</li><li>CSS</li><li>Git</li><li>Linux</li><li>Bash</li>
-            </ul>
+        <div class="domain__card">
+          <div class="domain__icon domain__icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
           </div>
-
-          <div class="skills__col">
-            <h3 class="skills__tier mono">// Red Team (Offensive)</h3>
-            <ul class="chips chips--red mono">
-              <li>Kali Linux</li><li>Wireshark</li><li>Nmap</li><li>Web Security</li><li>Burp Suite</li>
-            </ul>
-          </div>
-
-          <div class="skills__col">
-            <h3 class="skills__tier mono">// Blue Team (Defensive)</h3>
-            <ul class="chips chips--cyan mono">
-              <li>Networking</li><li>Docker</li><li>SIEM Basics</li><li>PostgreSQL</li><li>REST APIs</li>
-            </ul>
-          </div>
-          
-          <div class="skills__col">
-            <h3 class="skills__tier mono">// Roadmap</h3>
-            <ul class="chips chips--muted mono">
-              <li>AWS</li><li>Azure</li><li>Terraform</li><li>Kubernetes</li><li>CI/CD</li><li>DevSecOps</li>
-            </ul>
-          </div>
+          <h3>Engineering & Infra</h3>
+          <p>Building resilient software and automating infrastructure with clean code.</p>
+          <ul class="chips chips--green">
+            <li>Python</li><li>Linux/Bash</li><li>SQL</li><li>Git</li><li>Java</li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ============================================================
-           ACTIVE SCANS (CURRENT FOCUS)
-           ============================================================ -->
-      <section id="focus" class="section reveal">
-        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">secops</span><span class="path">:~</span><span class="sym">$</span> tail -f /var/log/focus.log</h2>
-        <ul class="focus mono">
-          <li><span class="plus">[+]</span> Software engineering & secure architecture</li>
-          <li><span class="plus">[+]</span> Linux administration & CLI mastery</li>
-          <li><span class="plus">[+]</span> Network protocols & traffic analysis</li>
-          <li><span class="plus">[+]</span> Docker & container security</li>
-          <li><span class="plus">[+]</span> Cloud security fundamentals (AWS/Azure)</li>
-        </ul>
-      </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <div class="section__header">
+        <span class="section__tag">03. // Operations</span>
+        <h2 class="section__title">Engineering Projects</h2>
+      </div>
 
-      <!-- ============================================================
-           CREDENTIALS (CERTS)
-           ============================================================ -->
-      <section id="certs" class="section reveal">
-        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">secops</span><span class="path">:~</span><span class="sym">$</span> cat /credentials.json</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <span class="project-card__type">IoT / Embedded</span>
+          <h3>Smart Traffic Light (ESP-NOW)</h3>
+          <p>Embedded prototype with two ESP8266 modules communicating securely over ESP-NOW. Traffic-light drives signal cycles while an autonomous car responds to state changes, using a reed-switch for hardware redundancy.</p>
+          <ul class="chips">
+            <li>C++</li><li>ESP8266</li><li>Arduino</li>
+          </ul>
+          <a href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer" class="project-card__link">View Repository →</a>
+        </article>
 
-        <div class="certs">
-          <div class="certs__group">
-            <h3 class="certs__label mono">Earned</h3>
-            <p class="empty mono">// none yet — currently grinding</p>
-          </div>
+        <article class="project-card">
+          <span class="project-card__type">In Progress</span>
+          <h3>Network Traffic Analyzer</h3>
+          <p>A Python tool designed to parse PCAP files, detect anomalies, and flag potential unauthorized port scanning or suspicious payload payloads on local networks.</p>
+          <ul class="chips chips--blue">
+            <li>Python</li><li>Scapy</li><li>Networking</li>
+          </ul>
+          <span class="project-card__link project-card__link--disabled">Compiling...</span>
+        </article>
 
-          <div class="certs__group">
-            <h3 class="certs__label mono">Currently studying</h3>
-            <ul class="certs__list mono">
-              <li><span class="wip">◐</span> CompTIA Security+</li>
-              <li><span class="wip">◐</span> ISC2 Certified in Cybersecurity (CC)</li>
-            </ul>
-          </div>
+        <article class="project-card">
+          <span class="project-card__type">Planned</span>
+          <h3>Cloud Hardening Script</h3>
+          <p>Reserved for an upcoming DevSecOps project. Automating baseline security configurations and firewall rules for cloud infrastructure using Infrastructure as Code.</p>
+          <ul class="chips chips--green">
+            <li>Terraform</li><li>AWS</li>
+          </ul>
+          <span class="project-card__link project-card__link--disabled">Awaiting Deployment...</span>
+        </article>
+      </div>
+    </section>
 
-          <div class="certs__group">
-            <h3 class="certs__label mono">Future goal</h3>
-            <ul class="certs__list mono">
-              <li><span class="goal">○</span> OSCP — Offensive Security Certified Professional</li>
-            </ul>
-          </div>
+    <!-- CERTIFICATIONS -->
+    <section id="certs" class="section reveal">
+      <div class="section__header">
+        <span class="section__tag">04. // Credentials</span>
+        <h2 class="section__title">Certifications & Roadmap</h2>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert-item">
+          <span class="cert-item__status cert-item__status--active">In Progress</span>
+          <h3>CompTIA Security+</h3>
+          <p>Building foundational knowledge in network security, threats, and vulnerabilities.</p>
         </div>
-      </section>
+        <div class="cert-item">
+          <span class="cert-item__status cert-item__status--active">In Progress</span>
+          <h3>ISC2 Certified in Cybersecurity (CC)</h3>
+          <p>Entry-level certification focusing on core security principles and best practices.</p>
+        </div>
+        <div class="cert-item">
+          <span class="cert-item__status cert-item__status--future">Future Goal</span>
+          <h3>OSCP</h3>
+          <p>Offensive Security Certified Professional — for advanced penetration testing skills.</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- ============================================================
-           CONTACT
-           ============================================================ -->
-      <section id="contact" class="section reveal">
-        <h2 class="prompt"><span class="user">humberto</span><span class="at">@</span><span class="host">secops</span><span class="path">:~</span><span class="sym">$</span> ./establish_connection.sh</h2>
-        <p class="prose">Open to internships, entry-level security/development opportunities, and collaboration. If you're building something interesting or need a vulnerability spotted, let's talk.</p>
-        <nav class="hero__actions" aria-label="Contact links">
-          <a class="btn btn--primary" href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer">GITHUB</a>
-          <a class="btn" href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-          <a class="btn" href="mailto:seu-email@exemplo.com">E-MAIL</a>
-        </nav>
-      </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <div class="section__header">
+        <span class="section__tag">05. // Contact</span>
+        <h2 class="section__title">Let's secure the build</h2>
+      </div>
+      <p class="prose">Open to internships, entry-level security/development opportunities, and professional networking. If you're building something interesting or need a vulnerability spotted, let's talk.</p>
+      
+      <div class="contact-links">
+        <a href="https://github.com/FreitasCyberSec" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card__label">GitHub</span>
+          <span class="contact-card__value">@FreitasCyberSec →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/humberto-freitas-a0ba95274/" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card__label">LinkedIn</span>
+          <span class="contact-card__value">in/humberto-freitas →</span>
+        </a>
+        <a href="mailto:seu-email@exemplo.com" class="contact-card">
+          <span class="contact-card__label">Email</span>
+          <span class="contact-card__value">Send a message →</span>
+        </a>
+      </div>
+    </section>
 
-    </main>
+  </main>
 
-    <footer class="foot mono">
-      <p class="foot__cmd"><span class="user">root</span><span class="at">@</span><span class="host">humberto</span><span class="path">:~</span><span class="sym">$</span> echo "Building. Learning. Securing."</p>
-      <p class="foot__c">© <span id="year">2024</span> Humberto Freitas · No systems were harmed in the making of this site.</p>
-    </footer>
-
-  </div>
+  <footer class="footer">
+    <div class="container footer__container">
+      <p>© <span id="year">2024</span> Humberto Freitas. Built with a security-first mindset.</p>
+    </div>
+  </footer>
 
   <script src="script.js" defer></script>
 </body>
