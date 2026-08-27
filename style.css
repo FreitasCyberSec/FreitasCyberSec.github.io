@@ -1,15 +1,13 @@
-/* ============================================================
-   Humberto Freitas — portfolio
-   Palette, type and spacing tokens. Edit here to reskin.
-   ============================================================ */
 :root {
-  --bg:        #08090C;   /* fundo principal      */
-  --surface:   #0D1117;   /* superfícies / cards  */
-  --border:    #21262D;   /* bordas discretas     */
-  --text:      #E6EDF3;   /* texto principal      */
-  --muted:     #8B949E;   /* texto secundário     */
-  --green:     #00FF88;   /* terminal / security  */
-  --cyan:      #00D9FF;   /* cloud / tech         */
+  --bg:        #05080A;   /* Fundo mais escuro/preto fosco */
+  --surface:   #0D1117;   
+  --border:    #21262D;   
+  --text:      #E6EDF3;   
+  --muted:     #8B949E;   
+  --green:     #00FF88;   /* Terminal / Defesa */
+  --cyan:      #00D9FF;   /* Cloud / DevOps */
+  --red:       #FF3B3B;   /* Red Team / Ataque */
+  --orange:    #FFA500;   /* Alertas */
 
   --maxw: 1080px;
   --gap: clamp(1rem, 2.5vw, 1.5rem);
@@ -22,7 +20,6 @@
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
 
-/* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -40,40 +37,60 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 .mono { font-family: var(--mono); }
 
-/* subtle ambient glow, top-left, very discreet */
+/* Fundo estilo SecOps: Grid sutil + Glow + Scanline */
 body::before {
   content: "";
   position: fixed; inset: 0;
   background:
     radial-gradient(60vw 40vw at 12% -5%, rgba(0,255,136,.06), transparent 60%),
-    radial-gradient(50vw 40vw at 100% 0%, rgba(0,217,255,.05), transparent 55%);
+    radial-gradient(50vw 40vw at 100% 0%, rgba(0,217,255,.05), transparent 55%),
+    linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
   pointer-events: none;
   z-index: 0;
 }
 
+/* Linha de varredura (Scanline) passando pela tela */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  background: linear-gradient(transparent 50%, rgba(0,255,136,.02) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+  animation: scanline 8s linear infinite;
+}
+@keyframes scanline { 0% { background-position: 0 0; } 100% { background-position: 0 100vh; } }
+
+/* TOP HUD Bar */
+.hud-top {
+  position: fixed; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .5rem 1.5rem;
+  background: rgba(5, 8, 10, 0.9);
+  border-bottom: 1px solid var(--border);
+  font-size: .7rem; letter-spacing: 1px;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+.hud-ok { color: var(--green); font-weight: bold; }
+.hud-left, .hud-right { color: var(--muted); }
+
 .wrap {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 clamp(1.1rem, 4vw, 2rem);
+  padding: 4rem clamp(1.1rem, 4vw, 2rem) 0;
 }
 
-/* ---------- accessibility ---------- */
-.skip-link {
-  position: absolute; left: -999px; top: 0;
-  background: var(--green); color: #001b0f;
-  padding: .6rem 1rem; border-radius: 0 0 var(--radius) 0;
-  font-family: var(--mono); font-weight: 700; z-index: 50;
-}
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--green); color: #001b0f; padding: .6rem 1rem; border-radius: 0 0 var(--radius) 0; font-family: var(--mono); font-weight: 700; z-index: 60; }
 .skip-link:focus { left: 0; }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
 
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero { padding: clamp(4rem, 12vw, 7rem) 0 var(--section-y); }
-
+/* HERO */
+.hero { padding: clamp(2rem, 8vw, 4rem) 0 var(--section-y); }
 .hero__status {
   display: inline-flex; align-items: center; gap: .55rem;
   border: 1px solid var(--border); border-radius: 999px;
@@ -81,57 +98,43 @@ body::before {
   font-size: .72rem; letter-spacing: 1.5px; color: var(--muted);
   background: rgba(13,17,23,.6);
 }
-.dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 0 0 rgba(0,255,136,.6);
-  animation: pulse 2.6s var(--ease) infinite;
-}
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(0,255,136,.5); }
-  70%  { box-shadow: 0 0 0 7px rgba(0,255,136,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,255,136,0); }
-}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(0,255,136,.6); animation: pulse 2.6s var(--ease) infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,255,136,.5); } 70% { box-shadow: 0 0 0 7px rgba(0,255,136,0); } 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0); } }
 
 .hero__id { display: flex; align-items: center; gap: clamp(1.1rem, 3vw, 1.8rem); }
-
 .avatar {
   position: relative; flex: 0 0 auto;
   width: clamp(76px, 14vw, 104px); aspect-ratio: 1;
   border-radius: 16px; overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--green);
   background: linear-gradient(145deg, #0f141b, #0a0d12);
   display: grid; place-items: center;
+  box-shadow: 0 0 15px rgba(0,255,136,0.15);
 }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
-.avatar__mono {
-  font-family: var(--mono); font-weight: 700;
-  font-size: clamp(1.4rem, 4vw, 2rem); color: var(--green);
-  letter-spacing: 1px;
-}
+.avatar__mono { font-family: var(--mono); font-weight: 700; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--green); letter-spacing: 1px; }
 
 .name {
-  font-family: var(--mono);          /* terminal/hacker */
+  font-family: var(--mono);
   text-transform: uppercase;
   font-size: clamp(1.7rem, 6vw, 3rem);
   font-weight: 400; line-height: 1.06;
   letter-spacing: clamp(1px, .6vw, 4px);
-  margin: 0;
-  overflow-wrap: break-word;         /* nunca estoura a tela no celular */
+  margin: 0; overflow-wrap: break-word;
 }
-.hero__id > div:last-child { min-width: 0; }  /* deixa o nome encolher ao lado do avatar */
+.hero__id > div:last-child { min-width: 0; }
 .role { color: var(--green); font-size: clamp(.82rem, 2vw, .95rem); margin: .7rem 0 .15rem; letter-spacing: .3px; }
 .loc  { color: var(--muted); font-size: .82rem; margin: 0; }
 
 .hero__line {
   font-size: clamp(1.05rem, 2.6vw, 1.35rem);
-  color: var(--text); max-width: 30ch;
+  color: var(--cyan); max-width: 50ch;
   margin: clamp(1.8rem, 5vw, 2.6rem) 0 2rem;
+  border-left: 2px solid var(--cyan); padding-left: 1rem;
+  min-height: 2.5em;
 }
-.hero__line { border-left: 2px solid var(--green); padding-left: 1rem; }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: .7rem; }
-
-/* ---------- buttons ---------- */
 .btn {
   font-family: var(--mono); font-size: .78rem; letter-spacing: 1px;
   padding: .7rem 1.15rem; border: 1px solid var(--border);
@@ -139,34 +142,22 @@ body::before {
   background: var(--surface);
   transition: border-color .2s var(--ease), transform .2s var(--ease), color .2s var(--ease), background .2s var(--ease);
 }
-.btn:hover {
-  border-color: var(--green); color: var(--green);
-  transform: translateY(-2px);
-}
+.btn:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
 .btn--primary { border-color: rgba(0,255,136,.35); color: var(--green); }
 .btn--primary:hover { background: rgba(0,255,136,.08); box-shadow: 0 0 22px rgba(0,255,136,.12); }
 
-/* ============================================================
-   SECTIONS + terminal prompt headings
-   ============================================================ */
+/* SECTIONS */
 .section { padding: var(--section-y) 0; border-top: 1px solid var(--border); }
-
 .prompt {
-  font-family: var(--mono);
-  font-size: clamp(.95rem, 2.2vw, 1.1rem);
-  font-weight: 500; letter-spacing: .2px;
-  color: var(--muted);
-  margin: 0 0 clamp(1.6rem, 4vw, 2.4rem);
-  word-break: break-word;
+  font-family: var(--mono); font-size: clamp(.95rem, 2.2vw, 1.1rem);
+  font-weight: 500; letter-spacing: .2px; color: var(--muted);
+  margin: 0 0 clamp(1.6rem, 4vw, 2.4rem); word-break: break-word;
 }
 .prompt .user { color: var(--green); }
 .prompt .host { color: var(--cyan); }
 .prompt .at, .prompt .path { color: var(--muted); }
 .prompt .sym { color: var(--text); margin: 0 .5ch 0 .2ch; }
-.prompt::after {
-  content: "▌"; color: var(--green); margin-left: .35ch;
-  animation: blink 1.15s steps(1) infinite;
-}
+.prompt::after { content: "▌"; color: var(--green); margin-left: .35ch; animation: blink 1.15s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
 .prose { max-width: 62ch; color: var(--text); }
@@ -174,58 +165,32 @@ body::before {
 .prose p:last-child { margin-bottom: 0; }
 .muted { color: var(--muted); }
 
-/* ---------- education ---------- */
-.edu {
-  border: 1px solid var(--border); border-radius: var(--radius);
-  background: var(--surface); padding: clamp(1.2rem, 3vw, 1.6rem);
-  max-width: 560px;
-}
-.edu__head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.edu__head h3 { margin: 0; font-size: 1.15rem; font-weight: 600; }
-.edu__org { color: var(--text); margin: .6rem 0 .1rem; font-size: .85rem; }
-.edu__meta { color: var(--muted); margin: 0; font-size: .8rem; }
-
-.tag {
-  font-size: .68rem; letter-spacing: 1px; padding: .25rem .6rem;
-  border: 1px solid var(--border); border-radius: 999px; color: var(--muted);
-}
-.tag--live { color: var(--green); border-color: rgba(0,255,136,.3); }
-.tag--soft { color: var(--cyan); border-color: rgba(0,217,255,.25); }
-
-/* ============================================================
-   PROJECTS
-   ============================================================ */
-.grid {
-  display: grid; gap: var(--gap);
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-}
+/* PROJECTS */
+.grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 .project {
   border: 1px solid var(--border); border-radius: var(--radius);
   background: var(--surface); padding: 1.4rem;
   display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
   transition: border-color .25s var(--ease), transform .25s var(--ease);
 }
 .project:hover { border-color: rgba(0,255,136,.35); transform: translateY(-3px); }
+.project::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0;
+  background: var(--green); transition: height .4s var(--ease);
+}
+.project:hover::before { height: 100%; }
 .project--ghost { opacity: .72; }
 .project--ghost:hover { border-color: rgba(0,217,255,.3); }
-
 .project__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-.project__num { color: var(--muted); font-size: .8rem; letter-spacing: 1px; }
+.project__num { color: var(--cyan); font-size: .8rem; letter-spacing: 1px; }
 .project__name { margin: 0 0 .6rem; font-size: 1.15rem; font-weight: 600; }
 .project__desc { margin: 0 0 1.1rem; color: var(--muted); font-size: .9rem; flex: 1; }
-
 .stack { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: 0 0 1.1rem; }
-.stack li {
-  font-size: .68rem; color: var(--cyan);
-  border: 1px solid rgba(0,217,255,.2); border-radius: 6px;
-  padding: .2rem .5rem;
-}
+.stack li { font-size: .68rem; color: var(--cyan); border: 1px solid rgba(0,217,255,.2); border-radius: 6px; padding: .2rem .5rem; }
 .project__links a { color: var(--green); font-size: .8rem; transition: opacity .2s; }
-.project__links a:hover { opacity: .7; }
 
-/* ============================================================
-   SKILLS
-   ============================================================ */
+/* SKILLS (ARSENAL) */
 .skills { display: grid; gap: clamp(1.6rem, 4vw, 2.4rem); grid-template-columns: 1fr; }
 .skills__tier { margin: 0 0 1rem; font-size: .8rem; letter-spacing: 1px; color: var(--muted); font-weight: 500; }
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -236,50 +201,26 @@ body::before {
   transition: border-color .2s var(--ease), transform .2s var(--ease);
 }
 .chips li:hover { transform: translateY(-2px); border-color: rgba(0,255,136,.35); }
-.chips--cyan li { color: var(--cyan); }
-.chips--cyan li:hover { border-color: rgba(0,217,255,.4); }
+.chips--cyan li { color: var(--cyan); border-color: rgba(0,217,255,.3); }
+.chips--red li { color: var(--red); border-color: rgba(255,59,59,.3); }
+.chips--red li:hover { border-color: rgba(255,59,59,.6); }
 .chips--muted li { color: var(--muted); }
 
-/* ============================================================
-   CURRENT FOCUS
-   ============================================================ */
+/* FOCUS & CERTS */
 .focus { list-style: none; padding: 0; margin: 0; display: grid; gap: .7rem; }
 .focus li { font-size: .9rem; color: var(--text); }
 .focus .plus { color: var(--green); margin-right: .7rem; }
-
-/* ============================================================
-   CERTIFICATIONS
-   ============================================================ */
 .certs { display: grid; gap: clamp(1.4rem, 4vw, 2rem); grid-template-columns: 1fr; }
 .certs__label { margin: 0 0 .9rem; font-size: .8rem; letter-spacing: 1px; color: var(--muted); }
 .certs__list { list-style: none; padding: 0; margin: 0; display: grid; gap: .7rem; }
 .certs__list li { font-size: .88rem; line-height: 1.5; }
 .certs__list li > span:first-child { margin-right: .55rem; }
-.certs__list a { color: var(--cyan); font-size: .8rem; margin-left: .4rem; }
-.certs__list a:hover { opacity: .7; }
 .empty { color: var(--muted); font-size: .82rem; margin: 0; }
-.ok   { color: var(--green); }
-.wip  { color: var(--cyan); }
+.ok { color: var(--green); }
+.wip { color: var(--cyan); }
 .goal { color: var(--muted); }
 
-/* ============================================================
-   PROFESSIONAL LINKS
-   ============================================================ */
-.links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
-.links li { border-bottom: 1px solid var(--border); }
-.links li:first-child { border-top: 1px solid var(--border); }
-.links a {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
-  padding: 1.05rem .25rem; transition: padding .25s var(--ease), color .25s var(--ease);
-}
-.links a:hover { padding-left: 1rem; color: var(--green); }
-.links__k { font-size: .95rem; font-weight: 500; }
-.links__v { color: var(--muted); font-size: .8rem; }
-.links a:hover .links__v { color: var(--green); }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* FOOTER */
 .foot { padding: var(--section-y) 0 4rem; border-top: 1px solid var(--border); }
 .foot__cmd { color: var(--muted); font-size: .85rem; margin: 0 0 .6rem; word-break: break-word; }
 .foot__cmd .user { color: var(--green); }
@@ -287,47 +228,31 @@ body::before {
 .foot__cmd .sym { color: var(--text); margin: 0 .5ch; }
 .foot__c { color: var(--muted); font-size: .78rem; margin: 0; }
 
-/* ============================================================
-   GLITCH — name only, discreet, triggered by JS/hover
-   ============================================================ */
+/* GLITCH */
 .glitch { position: relative; display: inline-block; }
-.glitch::before, .glitch::after {
-  content: attr(data-text); position: absolute; inset: 0;
-  clip-path: inset(0); opacity: 0; pointer-events: none;
-}
-.glitch.is-glitching::before {
-  opacity: .9; left: 2px; text-shadow: -1.5px 0 var(--cyan);
-  animation: g1 .4s steps(2) 1;
-}
-.glitch.is-glitching::after {
-  opacity: .9; left: -2px; text-shadow: 1.5px 0 var(--green);
-  animation: g2 .4s steps(2) 1;
-}
+.glitch::before, .glitch::after { content: attr(data-text); position: absolute; inset: 0; clip-path: inset(0); opacity: 0; pointer-events: none; }
+.glitch.is-glitching::before { opacity: .9; left: 2px; text-shadow: -1.5px 0 var(--cyan); animation: g1 .4s steps(2) 1; }
+.glitch.is-glitching::after { opacity: .9; left: -2px; text-shadow: 1.5px 0 var(--green); animation: g2 .4s steps(2) 1; }
 @keyframes g1 { 0%{clip-path:inset(10% 0 80% 0)} 50%{clip-path:inset(60% 0 20% 0)} 100%{clip-path:inset(30% 0 55% 0)} }
 @keyframes g2 { 0%{clip-path:inset(70% 0 10% 0)} 50%{clip-path:inset(20% 0 60% 0)} 100%{clip-path:inset(45% 0 35% 0)} }
 
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (min-width: 640px) {
-  .skills { grid-template-columns: repeat(3, 1fr); }
+  .skills { grid-template-columns: repeat(2, 1fr); }
   .certs  { grid-template-columns: repeat(3, 1fr); align-items: start; }
 }
+@media (min-width: 900px) {
+  .skills { grid-template-columns: repeat(4, 1fr); }
+}
 @media (max-width: 480px) {
+  .hud-top { padding: .4rem 0.8rem; font-size: .6rem; }
   .hero__id { flex-direction: column; align-items: flex-start; text-align: left; }
   .btn { flex: 1 1 auto; text-align: center; }
 }
-
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
+  body::after { display: none; }
 }
