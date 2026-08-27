@@ -1,17 +1,46 @@
-/* ============================================================
-   Portfolio — minimal vanilla JS. No dependencies.
-   1) Footer year   2) Scroll reveal   3) Discreet name glitch
-   ============================================================ */
 (function () {
   "use strict";
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* 1) current year in footer */
+  /* 1) Footer year */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
-  /* 2) reveal sections on scroll */
+  /* 2) Live System Clock (HUD) */
+  var clock = document.getElementById('live-clock');
+  function updateClock() {
+    if (!clock) return;
+    var now = new Date();
+    var timeStr = now.toTimeString().split(' ')[0];
+    clock.textContent = 'SYS_TIME: ' + timeStr;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  /* 3) Typewriter effect for Hero line */
+  var typeTarget = document.getElementById('typewriter');
+  if (typeTarget && !reduce) {
+    var text = 'Building software. Learning security. Engineering resilient systems.';
+    var index = 0;
+    typeTarget.textContent = '';
+    
+    function type() {
+      if (index < text.length) {
+        typeTarget.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 45);
+      } else {
+        // Efeito de cursor piscando ao terminar
+        typeTarget.innerHTML += '<span style="color:var(--green); animation: blink 1s steps(1) infinite;">_</span>';
+      }
+    }
+    setTimeout(type, 800);
+  } else if (typeTarget) {
+    typeTarget.textContent = 'Building software. Learning security. Engineering resilient systems.';
+  }
+
+  /* 4) Reveal sections on scroll */
   var items = document.querySelectorAll(".reveal");
   if (reduce || !("IntersectionObserver" in window)) {
     items.forEach(function (el) { el.classList.add("is-visible"); });
@@ -24,14 +53,14 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* 3) glitch on the name — subtle: once on load, then on hover, never looping */
+  /* 5) Glitch effect */
   var name = document.querySelector(".glitch");
   if (name && !reduce) {
     var fire = function () {
       name.classList.add("is-glitching");
       setTimeout(function () { name.classList.remove("is-glitching"); }, 420);
     };
-    setTimeout(fire, 700);              // one flicker shortly after load
+    setTimeout(fire, 700);
     name.addEventListener("mouseenter", fire);
     name.addEventListener("focus", fire);
   }
